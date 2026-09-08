@@ -1,0 +1,2810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Balogun Temitayo | Insurance Broker</title>
+
+    <meta
+        name="description"
+        content="I'm a trusted Canadian insurance broker helping individuals, families and businesses find coverage that fits their needs."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="insurance favicon.png" type="image/x-icon">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: #f8fafc;
+            color: #142033;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        :root {
+            --navy: #0b1f3a;
+            --navy-light: #16365f;
+            --blue: #1f6feb;
+            --blue-light: #eaf3ff;
+            --gold: #d7a84b;
+            --white: #ffffff;
+            --light: #f8fafc;
+            --border: #e5eaf0;
+            --text: #526174;
+            --dark: #142033;
+        }
+
+        .container {
+            width: min(1160px, 92%);
+            margin: auto;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            max-width: 650px;
+            margin-bottom: 55px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 25px;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--navy);
+        }
+
+        h1,
+        h2 {
+            font-family: "Playfair Display", serif;
+        }
+
+        h2 {
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .section-header p {
+            color: var(--text);
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: .3s;
+        }
+
+        header.scrolled {
+            background: rgba(255,255,255,.95);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 30px rgba(11,31,58,.08);
+        }
+
+        .navbar {
+            height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            color: white;
+        }
+
+        header.scrolled .logo {
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            color: var(--navy);
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 11px;
+            opacity: .7;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        header.scrolled .nav-links {
+            color: var(--navy);
+        }
+
+        .nav-links a {
+            transition: .2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .nav-cta {
+            background: var(--blue);
+            color: white !important;
+            padding: 12px 19px;
+            border-radius: 8px;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: 0;
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        header.scrolled .menu-btn {
+            color: var(--navy);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 760px;
+            padding-top: 150px;
+            padding-bottom: 80px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    100deg,
+                    rgba(7,26,50,.97),
+                    rgba(11,31,58,.86)
+                ),
+                url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=85")
+                center/cover;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,.08);
+            right: -150px;
+            bottom: -150px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            align-items: center;
+            gap: 70px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            color: white;
+        }
+
+        .hero-content .eyebrow {
+            color: #bcd8ff;
+        }
+
+        .hero-content .eyebrow::before {
+            background: var(--gold);
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: clamp(3rem, 6vw, 5.4rem);
+            line-height: 1.02;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-description {
+            color: #d4dfec;
+            max-width: 590px;
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            border: 1px solid transparent;
+            transition: .25s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(31,111,235,.3);
+        }
+
+        .btn-outline {
+            border-color: rgba(255,255,255,.25);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 45px;
+            color: #c3d0df;
+            font-size: 13px;
+        }
+
+        .trust-icons {
+            display: flex;
+        }
+
+        .trust-circle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #dce8f7;
+            border: 3px solid var(--navy);
+            margin-left: -8px;
+            display: grid;
+            place-items: center;
+            color: var(--navy);
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .trust-circle:first-child {
+            margin-left: 0;
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,.97);
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 30px 70px rgba(0,0,0,.2);
+        }
+
+        .profile {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+
+        .profile-img {
+            width: 235px;
+            height: 235px;
+            border-radius: 14px;
+            object-fit: cover;
+            background: #dbe7f4;
+        }
+
+        .profile h3 {
+            margin-bottom: 3px;
+        }
+
+        .profile p {
+            color: var(--text);
+            font-size: 13px;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 7px;
+            padding: 4px 9px;
+            border-radius: 20px;
+            background: #e8f7ee;
+            color: #23824b;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .quote-title {
+            font-family: "Playfair Display", serif;
+            font-size: 26px;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .quote-text {
+            color: var(--text);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .quick-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .quick-option {
+            padding: 13px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .quick-option:hover {
+            border-color: var(--blue);
+            background: var(--blue-light);
+        }
+
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            background: white;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 35px 0;
+        }
+
+        .stat {
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            color: var(--navy);
+            font-size: 34px;
+        }
+
+        .stat span {
+            color: var(--text);
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 540px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .experience-card {
+            position: absolute;
+            right: -25px;
+            bottom: 30px;
+            background: white;
+            padding: 20px 24px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,.13);
+        }
+
+        .experience-card strong {
+            font-family: "Playfair Display", serif;
+            font-size: 34px;
+            color: var(--navy);
+            display: block;
+        }
+
+        .experience-card span {
+            font-size: 12px;
+            color: var(--text);
+        }
+
+        .about-content p {
+            color: var(--text);
+            margin-bottom: 18px;
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+            color: var(--navy);
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            background: #f4f7fb;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(11,31,58,.09);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 11px;
+            background: var(--blue-light);
+            color: var(--blue);
+            display: grid;
+            place-items: center;
+            font-size: 22px;
+            margin-bottom: 22px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .service-card p {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           PROCESS
+        ========================= */
+
+        .process {
+            background: var(--navy);
+            color: white;
+        }
+
+        .process h2 {
+            color: white;
+        }
+
+        .process .section-header p {
+            color: #b7c5d7;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .process-item {
+            position: relative;
+        }
+
+        .process-number {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.14);
+            display: grid;
+            place-items: center;
+            color: var(--gold);
+            font-weight: 800;
+            margin-bottom: 22px;
+        }
+
+        .process-item h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .process-item p {
+            color: #aebdd0;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           WHY US
+        ========================= */
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .benefits {
+            display: grid;
+            gap: 20px;
+        }
+
+        .benefit {
+            display: flex;
+            gap: 17px;
+        }
+
+        .check {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            background: #e9f6ee;
+            color: #2b8a52;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+        }
+
+        .benefit h3 {
+            font-size: 17px;
+            margin-bottom: 4px;
+        }
+
+        .benefit p {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .why-card {
+            background: linear-gradient(135deg, #eaf3ff, #f8fbff);
+            border: 1px solid #d8e7fa;
+            padding: 45px;
+            border-radius: 18px;
+        }
+
+        .why-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .why-card p {
+            color: var(--text);
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           TESTIMONIALS
+        ========================= */
+
+        .testimonials {
+            background: #f4f7fb;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .testimonial {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .stars {
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+        }
+
+        .testimonial p {
+            color: var(--text);
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .client {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .client-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--blue-light);
+            display: grid;
+            place-items: center;
+            color: var(--blue);
+            font-weight: 800;
+        }
+
+        .client strong {
+            display: block;
+            color: var(--navy);
+            font-size: 14px;
+        }
+
+        .client span {
+            font-size: 12px;
+            color: var(--text);
+        }
+
+
+        /* =========================
+           FAQ
+        ========================= */
+
+        .faq {
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: 0;
+            padding: 22px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            cursor: pointer;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .faq-question span {
+            font-size: 24px;
+            font-weight: 400;
+            transition: .3s;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: .35s;
+        }
+
+        .faq-answer p {
+            color: var(--text);
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question span {
+            transform: rotate(45deg);
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .cta-box {
+            background:
+                linear-gradient(
+                    120deg,
+                    #0b1f3a,
+                    #16365f
+                );
+            border-radius: 20px;
+            padding: 65px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cta-box h2 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .cta-box p {
+            color: #c1cedd;
+            max-width: 570px;
+        }
+
+        .cta-actions {
+            flex-shrink: 0;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: #f4f7fb;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            padding-right: 30px;
+        }
+
+        .contact-detail {
+            display: flex;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            display: grid;
+            place-items: center;
+        }
+
+        .contact-detail h4 {
+            color: var(--navy);
+            margin-bottom: 2px;
+        }
+
+        .contact-detail p {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .contact-form {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 17px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            color: var(--navy);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid #dce3eb;
+            border-radius: 8px;
+            padding: 13px 14px;
+            outline: none;
+            color: var(--dark);
+            background: white;
+            transition: .2s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(31,111,235,.08);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-note {
+            color: #7a8797;
+            font-size: 11px;
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #07182d;
+            color: white;
+            padding: 60px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 45px;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+        footer .logo {
+            margin-bottom: 18px;
+        }
+
+        .footer-about {
+            color: #9caec2;
+            font-size: 13px;
+            max-width: 330px;
+        }
+
+        footer h4 {
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 10px;
+        }
+
+        footer li a {
+            color: #9caec2;
+            font-size: 13px;
+        }
+
+        footer li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 22px;
+            color: #718399;
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           WHATSAPP
+        ========================= */
+
+        .whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 56px;
+            height: 56px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.2);
+            z-index: 900;
+            transition: .2s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: .7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+                top: 82px;
+                left: 0;
+                width: 100%;
+                background: white;
+                color: var(--navy);
+                padding: 25px 4%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+                display: none;
+                box-shadow: 0 15px 30px rgba(0,0,0,.08);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-grid,
+            .about-grid,
+            .why-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-card {
+                max-width: 600px;
+            }
+            
+            .profile {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            align-items: center;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+
+        .profile-img {
+            width: 245px;
+            height: 245px;
+            border-radius: 14px;
+            object-fit: cover;
+            background: #dbe7f4;
+        }
+            .services-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cta-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .navbar {
+                height: 70px;
+            }
+
+            .nav-links {
+                top: 70px;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px 0;
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .services-grid,
+            .testimonial-grid,
+            .process-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image img {
+                height: 420px;
+            }
+
+            .experience-card {
+                right: 15px;
+            }
+
+            .quick-options {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .contact-form {
+                padding: 24px;
+            }
+
+            .cta-box {
+                padding: 35px 25px;
+            }
+
+            .copyright {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header id="header">
+
+    <div class="container navbar">
+
+        <a href="#" class="logo">
+
+            <div class="logo-mark">
+                BT
+            </div>
+
+            <div class="logo-text">
+                Balogun Temitayo
+                <span>Insurance Broker</span>
+            </div>
+
+        </a>
+
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="#about">About</a>
+
+            <a href="#services">Services</a>
+
+            <a href="#process">How It Works</a>
+
+            <a href="#faq">FAQ</a>
+
+            <a href="#contact">Contact</a>
+
+            <a href="#contact" class="nav-cta">
+                Get a Quote
+            </a>
+
+        </nav>
+
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+
+            <div class="eyebrow">
+                Trusted Canadian Insurance Advice
+            </div>
+
+            <h1>
+                Coverage built around
+                <span>your life.</span>
+            </h1>
+
+            <p class="hero-description">
+                Helping individuals, families and businesses across Canada
+                find insurance solutions that provide confidence, protection
+                and peace of mind.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#contact" class="btn btn-primary">
+                    Get a Free Quote →
+                </a>
+
+                <a href="#services" class="btn btn-outline">
+                    Explore Coverage
+                </a>
+
+            </div>
+
+
+            <div class="hero-trust">
+
+                <div class="trust-icons">
+
+                    <div class="trust-circle">✓</div>
+                    <div class="trust-circle">★</div>
+                    <div class="trust-circle">+</div>
+
+                </div>
+
+                <span>
+                    Personalized guidance. Clear options. No pressure.
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hero-card reveal">
+
+            <div class="profile">
+                <img
+                    class="profile-img"
+                    src="D8A047DE-5066-4065-B12F-359E1F7896FA.png"
+                    alt="Balogun Temitayo"
+                >
+
+                <div>
+
+                    <h3>
+                        BALOGUN TEMITAYO
+                    </h3>
+
+                    <p>
+                        Licensed Insurance Broker
+                    </p>
+
+                    <span class="badge">
+                        ● Available for consultations
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="quote-title">
+                Let's find the right protection.
+            </div>
+
+            <p class="quote-text">
+                Tell me what you're looking to protect and I'll help you
+                explore suitable coverage options.
+            </p>
+
+
+            <div class="quick-options">
+
+                <div class="quick-option">
+                    🏠 Home Insurance
+                </div>
+
+                <div class="quick-option">
+                    🚗 Auto Insurance
+                </div>
+
+                <div class="quick-option">
+                    ❤️ Life Insurance
+                </div>
+
+                <div class="quick-option">
+                    💼 Business Insurance
+                </div>
+
+            </div>
+
+
+            <a href="#contact" class="btn btn-primary" style="width:100%;">
+                Start Your Quote
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats">
+
+    <div class="container stats-grid">
+
+        <div class="stat">
+            <strong>2+</strong>
+            <span>Years of Experience</span>
+        </div>
+
+        <div class="stat">
+            <strong>50+</strong>
+            <span>Clients Supported</span>
+        </div>
+
+        <div class="stat">
+            <strong>15+</strong>
+            <span>Coverage Options</span>
+        </div>
+
+        <div class="stat">
+            <strong>98%</strong>
+            <span>Client Satisfaction</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section about" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-image reveal">
+
+            <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85"
+                alt="Professional insurance consultation"
+            >
+
+            <div class="experience-card">
+
+                <strong>2+</strong>
+
+                <span>
+                    Years helping Canadians
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-content reveal">
+
+            <div class="eyebrow">
+                About Me
+            </div>
+
+            <h2>
+                Insurance advice that puts people first.
+            </h2>
+
+            <p>
+                Insurance can feel complicated. My role is to make it
+                simpler, clearer and more personal.
+            </p>
+
+            <p>
+                I work with individuals, families and business owners
+                to understand their needs, explore their options and
+                choose coverage that fits their goals and circumstances.
+            </p>
+
+            <p>
+                Rather than taking a one-size-fits-all approach, I take
+                time to understand what matters most to each client.
+            </p>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="section services" id="services">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="eyebrow">
+                Insurance Solutions
+            </div>
+
+            <h2>
+                Protection for what matters most.
+            </h2>
+
+            <p>
+                Explore flexible insurance solutions designed around
+                your personal, family and business needs.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    🏠
+                </div>
+
+                <h3>
+                    Home Insurance
+                </h3>
+
+                <p>
+                    Protect your home and belongings against unexpected
+                    events while finding coverage that fits your situation.
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    🚗
+                </div>
+
+                <h3>
+                    Auto Insurance
+                </h3>
+
+                <p>
+                    Explore coverage options for your vehicle with guidance
+                    designed around your driving needs.
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    Life Insurance
+                </h3>
+
+                <p>
+                    Help protect the people who depend on you with
+                    thoughtful life insurance planning.
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    🏢
+                </div>
+
+                <h3>
+                    Business Insurance
+                </h3>
+
+                <p>
+                    Help protect your business, assets and operations
+                    with suitable commercial coverage.
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    ✈️
+                </div>
+
+                <h3>
+                    Travel Insurance
+                </h3>
+
+                <p>
+                    Travel with greater confidence by exploring coverage
+                    options for unexpected situations away from home.
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Personal Coverage
+                </h3>
+
+                <p>
+                    Personalized insurance solutions designed around
+                    your lifestyle, assets and priorities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROCESS
+========================= -->
+
+<section class="section process" id="process">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="eyebrow">
+                Simple Process
+            </div>
+
+            <h2>
+                Insurance doesn't have to be complicated.
+            </h2>
+
+            <p>
+                A straightforward process designed to help you make
+                informed decisions with confidence.
+            </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="process-item reveal">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>
+                    Tell Me About You
+                </h3>
+
+                <p>
+                    We start with a conversation about your needs,
+                    goals and current situation.
+                </p>
+
+            </div>
+
+
+            <div class="process-item reveal">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>
+                    Explore Your Options
+                </h3>
+
+                <p>
+                    We review suitable coverage options based on
+                    your circumstances.
+                </p>
+
+            </div>
+
+
+            <div class="process-item reveal">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    Choose With Confidence
+                </h3>
+
+                <p>
+                    You receive clear information so you can make
+                    an informed decision.
+                </p>
+
+            </div>
+
+
+            <div class="process-item reveal">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>
+                    Ongoing Support
+                </h3>
+
+                <p>
+                    Your relationship doesn't end after the policy.
+                    I'm here when your needs change.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     WHY CHOOSE
+========================= -->
+
+<section class="section">
+
+    <div class="container why-grid">
+
+        <div class="reveal">
+
+            <div class="section-header">
+
+                <div class="eyebrow">
+                    Why Work With Me
+                </div>
+
+                <h2>
+                    Advice you can feel good about.
+                </h2>
+
+                <p>
+                    My goal isn't simply to sell a policy. It's to help
+                    you understand your protection and feel confident
+                    about your decision.
+                </p>
+
+            </div>
+
+
+            <div class="benefits">
+
+                <div class="benefit">
+
+                    <div class="check">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Personalized Guidance
+                        </h3>
+
+                        <p>
+                            Your circumstances come first. Every
+                            recommendation starts with understanding you.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="check">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Clear Explanations
+                        </h3>
+
+                        <p>
+                            Insurance terminology can be confusing.
+                            I'll explain your options in plain language.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="check">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Long-Term Support
+                        </h3>
+
+                        <p>
+                            Your coverage should evolve as your life
+                            changes. I'm here to help along the way.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="why-card reveal">
+
+            <h3>
+                “The right insurance isn't just about protection today.”
+            </h3>
+
+            <p>
+                It's about having a plan that continues to make sense
+                as your family, career, business and goals evolve.
+            </p>
+
+            <a href="#contact" class="btn btn-primary">
+                Book a Consultation
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     TESTIMONIALS
+========================= -->
+
+<section class="section testimonials">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="eyebrow">
+                Client Experiences
+            </div>
+
+            <h2>
+                Trusted by people like you.
+            </h2>
+
+        </div>
+
+
+        <div class="testimonial-grid">
+
+            <div class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Temitayo made the entire process incredibly easy.
+                    She explained everything clearly and never made me
+                    feel pressured to choose anything.”
+                </p>
+
+                <div class="client">
+
+                    <div class="client-avatar">
+                        JD
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Jessica D.
+                        </strong>
+
+                        <span>
+                            Toronto, ON
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “I finally understood what my coverage actually
+                    meant. Temitayo was patient, professional and very
+                    helpful throughout the process.”
+                </p>
+
+                <div class="client">
+
+                    <div class="client-avatar">
+                        MK
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Michael K.
+                        </strong>
+
+                        <span>
+                            Mississauga, ON
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Professional from start to finish. I appreciated
+                    having someone explain my options instead of simply
+                    giving me a policy.”
+                </p>
+
+                <div class="client">
+
+                    <div class="client-avatar">
+                        AS
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Amanda S.
+                        </strong>
+
+                        <span>
+                            Calgary, AB
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="section faq" id="faq">
+
+    <div class="container">
+
+        <div class="section-header reveal" style="margin:auto; text-align:center;">
+
+            <div class="eyebrow">
+                FAQ
+            </div>
+
+            <h2>
+                Questions, answered.
+            </h2>
+
+        </div>
+
+
+        <div class="faq-container">
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Do I have to know exactly what insurance I need?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Not at all. We can start with a conversation about
+                        your situation and determine what types of coverage
+                        may be relevant to you.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    How does the consultation work?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        You can submit the contact form or reach out directly.
+                        We'll arrange a convenient time to discuss your
+                        insurance needs and questions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Can you help compare different options?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Depending on the products and insurers available
+                        through the brokerage, suitable options can be
+                        reviewed and explained so you can make an informed
+                        choice.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Do you work with clients remotely?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. Virtual consultations can make it convenient
+                        to discuss your insurance needs from wherever
+                        you are in Canada.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box reveal">
+
+            <div>
+
+                <div class="eyebrow" style="color:#bcd8ff;">
+                    Let's Talk
+                </div>
+
+                <h2>
+                    Ready to protect what matters?
+                </h2>
+
+                <p>
+                    Let's have a conversation about your insurance needs.
+                    No pressure. Just clear, personalized guidance.
+                </p>
+
+            </div>
+
+            <div class="cta-actions">
+
+                <a href="#contact" class="btn btn-primary">
+                    Request a Quote →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="section contact" id="contact">
+
+    <div class="container contact-grid">
+
+        <div class="contact-info reveal">
+
+            <div class="eyebrow">
+                Contact
+            </div>
+
+            <h2>
+                Let's start a conversation.
+            </h2>
+
+            <p style="color:var(--text);">
+                Have a question or want to explore your insurance options?
+                Send a message and I'll get back to you.
+            </p>
+
+
+            <div class="contact-detail">
+
+                <div class="contact-icon">
+                    ✉
+                </div>
+
+                <div>
+
+                    <h4>
+                        Email
+                    </h4>
+
+                    <p>
+                        temitayobalogun89@gmail.com
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <div class="contact-icon">
+                    ☎
+                </div>
+
+                <div>
+
+                    <h4>
+                        Phone
+                    </h4>
+
+                    <p>
+                        +1 (705) 988-6086
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <div>
+
+                    <h4>
+                        Location
+                    </h4>
+
+                    <p>
+                        Toronto, Ontario, Canada
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <form
+    class="contact-form reveal"
+    id="quoteForm"
+    action="https://formspree.io/f/mbgjprlk"
+    method="POST"
+>
+
+    <div class="form-grid">
+
+        <div class="form-group">
+
+            <label>
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                name="full_name"
+                placeholder="Your name"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                name="phone"
+                placeholder="+1 (___) ___-____"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Coverage Type
+            </label>
+
+            <select name="coverage_type" required>
+
+                <option value="">
+                    Select coverage
+                </option>
+
+                <option value="Auto Insurance">
+                    Auto Insurance
+                </option>
+
+                <option value="Home Insurance">
+                    Home Insurance
+                </option>
+
+                <option value="Life Insurance">
+                    Life Insurance
+                </option>
+
+                <option value="Business Insurance">
+                    Business Insurance
+                </option>
+
+                <option value="Travel Insurance">
+                    Travel Insurance
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group full">
+
+            <label>
+                How can I help?
+            </label>
+
+            <textarea
+                name="message"
+                placeholder="Tell me a little about what you're looking for..."
+            ></textarea>
+
+        </div>
+
+    </div>
+
+
+    <input
+        type="hidden"
+        name="_subject"
+        value="New Insurance Consultation Request"
+    >
+
+
+    <button
+        type="submit"
+        class="btn btn-primary"
+        style="width:100%;"
+    >
+        Request a Consultation →
+    </button>
+
+
+    <p class="form-note">
+        By submitting this form, you agree to be contacted regarding
+        your inquiry. This form does not constitute an insurance
+        application or policy.
+    </p>
+
+</form>
+ <script>
+    const quoteForm = document.getElementById("quoteForm");
+
+    quoteForm.addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const button = quoteForm.querySelector("button[type='submit']");
+        const originalText = button.innerHTML;
+
+        button.innerHTML = "Sending Request...";
+        button.disabled = true;
+
+        const formData = new FormData(quoteForm);
+
+        try {
+
+            const response = await fetch(quoteForm.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+
+                quoteForm.innerHTML = `
+                    <div style="
+                        text-align: center;
+                        padding: 50px 20px;
+                    ">
+
+                        <div style="
+                            font-size: 55px;
+                            margin-bottom: 20px;
+                        ">
+                            ✓
+                        </div>
+
+                        <h3 style="margin-bottom: 15px;">
+                            Request Received!
+                        </h3>
+
+                        <p style="
+                            font-size: 16px;
+                            line-height: 1.7;
+                            margin-bottom: 25px;
+                        ">
+                            Thank you for reaching out. Your consultation
+                            request has been successfully submitted.
+                            I'll review your request and get back to you shortly.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="location.reload()"
+                        >
+                            Send Another Request
+                        </button>
+
+                    </div>
+                `;
+
+            } else {
+
+                button.innerHTML = originalText;
+                button.disabled = false;
+
+                alert(
+                    "Sorry, there was a problem submitting your request. Please try again."
+                );
+            }
+
+        } catch (error) {
+
+            button.innerHTML = originalText;
+            button.disabled = false;
+
+            alert(
+                "Something went wrong. Please check your internet connection and try again."
+            );
+
+        }
+
+    });
+</script>
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <a href="#" class="logo">
+
+                    <div class="logo-mark">
+                        BT
+                    </div>
+
+                    <div class="logo-text">
+                        Balogun Temitayo
+                        <span>Insurance Broker</span>
+                    </div>
+
+                </a>
+
+                <p class="footer-about">
+                    Helping Canadians make informed insurance decisions
+                    with personalized guidance and dependable support.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Navigation
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#process">
+                            How It Works
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#faq">
+                            FAQ
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Services
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="#services">
+                            Home Insurance
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Auto Insurance
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Life Insurance
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Business Insurance
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Contact
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="mailto:temitayobalogun89@gmail.com">
+                            Email
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="tel:+14165550198">
+                            +1 (705) 988-6086
+                        </a>
+                    </li>
+
+                    <li>
+                        Ontario, Canada
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <span>
+                © 2026 Balogun Temitayo Insurance. All rights reserved.
+            </span>
+
+            <span>
+                Privacy Policy · Terms of Use
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     WHATSAPP
+========================= -->
+
+<a
+    href="https://wa.me/+17059886086"
+    class="whatsapp"
+    target="_blank"
+    aria-label="Contact on WhatsApp"
+>
+    ☎
+</a>
+
+
+
+<script>
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 30) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+    });
+
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+
+        navLinks.classList.toggle("active");
+
+    });
+
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+        });
+
+    });
+
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    document.querySelectorAll(".faq-question").forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const item = button.parentElement;
+
+            document.querySelectorAll(".faq-item").forEach(other => {
+
+                if (other !== item) {
+                    other.classList.remove("active");
+                }
+
+            });
+
+            item.classList.toggle("active");
+
+        });
+
+    });
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+    const revealObserver =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                        revealObserver.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(element => {
+
+        revealObserver.observe(element);
+
+    });
+
+
+    /* =========================
+       FORM
+    ========================= */
+
+    
+
+
+    /* =========================
+       QUICK OPTIONS
+    ========================= */
+
+    document.querySelectorAll(".quick-option").forEach(option => {
+
+        option.addEventListener("click", () => {
+
+            document
+                .getElementById("contact")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
